@@ -1,0 +1,22 @@
+export MODEL_NAME="THUDM/CogVideoX-5b"
+# IMPORTANT: Point to the folder containing your videos AND the new metadata.csv
+export DATASET_PATH="/workspace/training_dataset"
+export OUTPUT_DIR="/workspace/mrbeast_lora"
+
+accelerate launch train_cogvideox_lora.py \
+  --pretrained_model_name_or_path=$MODEL_NAME \
+  --instance_data_root=$DATASET_PATH \
+  --caption_column="prompt" \
+  --video_column="video" \
+  --validation_prompt="mrbeast style, a red car driving off a cliff, cinematic lighting" \
+  --validation_epochs=10 \
+  --train_batch_size=1 \
+  --gradient_accumulation_steps=4 \
+  --learning_rate=1e-4 \
+  --lr_scheduler="cosine" \
+  --lr_warmup_steps=200 \
+  --max_train_steps=1500 \
+  --mixed_precision="bf16" \
+  --output_dir=$OUTPUT_DIR \
+  --enable_slicing \
+  --enable_tiling
