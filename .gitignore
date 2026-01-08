@@ -1,0 +1,16 @@
+# Ignore the huge video dataset
+mr_beast_dataset/
+*.mp4
+*.mov
+*.zip
+
+# Ignore the virtual environment (thousands of library files)
+.venv/
+venv/
+__pycache__/
+
+# Ignore IDE settings
+.idea/
+
+# Ignore sensitive info (remove your key from the script first!)
+.env
