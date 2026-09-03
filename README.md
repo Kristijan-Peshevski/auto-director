@@ -1,12 +1,4 @@
-Here is the text formatted perfectly for README.md. It uses proper Markdown syntax for code blocks, headers, and emphasis.
 
-You can copy the raw code below and paste it directly into your README.md file on GitHub or PyCharm.
-
-code
-Markdown
-download
-content_copy
-expand_less
 # Training Visual Generative Models: CogVideoX-5B Style Transfer
 
 **Author:** Kristijan Peshevski  
